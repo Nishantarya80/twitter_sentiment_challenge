@@ -1,5 +1,4 @@
 # twitter_sentiment_challenge
-Twitter Sentiment Analysis Challenge for Learn Python for Data Science #2 by @Sirajology on Youtube
 
 ##Overview
 
@@ -22,8 +21,19 @@ python demo.py
 
 ##Challenge
 
-Instead of printing out each tweet, save each Tweet to a CSV file with an associated label. The label should be either 'Positive' or 'Negative'. You can define the sentiment polarity threshold yourself, whatever you think constitutes a tweet being positive/negative. Push your code repository to [github](https://help.github.com/articles/set-up-git/) then post it in the comments. I'll give the winner a shoutout a week from now!
+Last week, there was the french Republicans Primary debate on television.
+I tried to apply Siraj's sentiment analysis to this night of debate in order to compare the seven different candidates.
+Here is the result of the analysis : 
+
+Mean Sentiment Polarity in descending order :
+Le Maire : 0.048
+Kosciusko : 0.021
+Poisson : 0.019
+Sarkozy : 0.010
+Cope : 0.005
+Fillon : -0.005
+Juppe : -0.017
 
 ##Credits
 
-This code is 100% Siraj baby.
+This code is forked from Siraj
