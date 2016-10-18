@@ -26,13 +26,13 @@ I tried to apply Siraj's sentiment analysis to this night of debate in order to 
 Here is the result of the analysis : 
 
 Mean Sentiment Polarity in descending order :
-* Le Maire : 0.048
-* Kosciusko : 0.021
-* Poisson : 0.019
-* Sarkozy : 0.010
-* Cope : 0.005
-* Fillon : -0.005
-* Juppe : -0.017
+* Poisson : 0.180
+* Fillon : 0.113
+* Juppe : 0.098
+* Sarkozy : 0.057
+* Cope : 0.036
+* Le Maire : 0.007
+* Kosciusko : 0.007
 
 ##Credits
 

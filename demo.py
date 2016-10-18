@@ -1,5 +1,7 @@
 import tweepy
 from textblob import TextBlob
+#French adaptor
+from textblob_fr import PatternTagger, PatternAnalyzer
 
 import numpy as np
 import operator
@@ -29,7 +31,7 @@ until_date = "2016-10-14"
 
 #Step 2b - Function of labelisation of analysis
 def get_label(analysis, threshold = 0):
-	if analysis.sentiment.polarity>threshold:
+	if analysis.sentiment[0]>threshold:
 		return 'Positive'
 	else:
 		return 'Negative'
@@ -45,9 +47,9 @@ for candidate in candidates_names:
 	with open('%s_tweets.csv' % candidate, 'wb') as this_candidate_file:
 		this_candidate_file.write('tweet,sentiment_label\n')
 		for tweet in this_candidate_tweets:
-			analysis = TextBlob(tweet.text)
+			analysis = TextBlob(tweet.text, pos_tagger=PatternTagger(), analyzer=PatternAnalyzer())
 			#Get the label corresponding to the sentiment analysis
-			this_candidate_polarities.append(analysis.sentiment.polarity)
+			this_candidate_polarities.append(analysis.sentiment[0])
 			this_candidate_file.write('%s,%s\n' % (tweet.text.encode('utf8'), get_label(analysis)))
 	#Save the mean for final results
 	all_polarities[candidate] = np.mean(this_candidate_polarities)
@@ -57,3 +59,5 @@ sorted_analysis = sorted(all_polarities.items(), key=operator.itemgetter(1), rev
 print 'Mean Sentiment Polarity in descending order :'
 for candidate, polarity in sorted_analysis:
 	print '%s : %0.3f' % (candidate, polarity)
+
+
